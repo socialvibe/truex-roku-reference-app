@@ -5,10 +5,6 @@ IMPORTS =
 ROKU_TEST_ID = 1
 ROKU_TEST_WAIT_DURATION = 5
 
-MAJOR = $(shell grep major_version manifest | sed 's/major_version=//')
-MINOR = $(shell grep minor_version manifest | sed 's/minor_version=//')
-BUILD_NUM = $(shell grep build_version manifest | sed 's/build_version=//' | bc)
-BUILD_HASH = $(shell git log -n1 --format=format:"%h")
 # BRANCH_NAME is set by Jenkins. When on a release branch, the following will evaluate to `rc`, while on a develop branch, it will be left alone (`develop`).
 RC_DEVELOP = $(shell echo $$BRANCH_NAME | sed "s/release.*/rc/")
 
