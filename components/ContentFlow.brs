@@ -119,12 +119,14 @@ sub launchTruexAd()
 
     ? "TRUE[X] >>> ContentFlow::launchTruexAd() - starting ad at video position: ";m.videoPlayer.position
 
-    ' pause the stream, which is currently playing a video ad
-    ' m.videoPlayer.control = "pause"
     m.videoPositionAtAdBreakPause = m.videoPlayer.position
-    ' m.currentAdBreak = decodedData.currentAdBreak
     ' Note: bumping the seek interval as the Roku player seems to have trouble seeking ahead to a specific time based on the type of stream.
     m.streamSeekDuration = decodedData.cardDuration + 3
+    ' Populating the test ad from the local mock payload
+    ' In a real world situation, the adParameters returned from the ad server will be populated similarly 
+    ' for the One Stage type integration we're demonstrating here.
+    adPayload = ParseJson(ReadAsciiFile(decodedData.vastPayload).trim())
+    adPayload.placement_hash = decodedData.placementHash
 
     ? "TRUE[X] >>> ContentFlow::launchTruexAd() - instantiating TruexAdRenderer ComponentLibrary..."
 
@@ -135,11 +137,7 @@ sub launchTruexAd()
     ' use the companion ad data to initialize the true[X] renderer
     tarInitAction = {
         type: "init",
-        adParameters: {
-            vast_config_url: decodedData.vastUrl,
-            placement_hash: decodedData.placementHash
-        },
-        isOneStageIntegration: true,
+        adParameters: adPayload,
         supportsUserCancelStream: true, ' enables cancelStream event types, disable if Channel does not support
         slotType: UCase(getCurrentAdBreakSlotType()),
         logLevel: 1, ' Optional parameter, set the verbosity of true[X] logging, from 0 (mute) to 5 (verbose), defaults to 5
