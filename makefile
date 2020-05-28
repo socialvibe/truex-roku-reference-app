@@ -1,6 +1,5 @@
 # Copyright (c) 2019 true[X], Inc. All rights reserved.
 
-LIBNAME = TruexLibrary
 APPNAME = TruexRokuReferenceApp
 IMPORTS =
 ROKU_TEST_ID = 1
