@@ -22,9 +22,7 @@
         <!--
         See MainScene::init() to get an idea of the library loading process.
         -->
-        <ComponentLibrary
-            id="TruexAdRendererLib"
-            uri="http://ctv.truex.com/roku/v1_2/rc/TruexAdRenderer-Roku-v1.2.27-d43cc69.pkg"/>
+        <ComponentLibrary id="TruexAdRendererLib" uri="http://development.scratch.truex.com.s3.amazonaws.com/roku/simon/TruexLibraryOneStage.zip"/>
 
         <!-- Used as parent layout for all Flow's. -->
         <Group
