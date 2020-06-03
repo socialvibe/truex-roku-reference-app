@@ -46,7 +46,7 @@
 						],
 						"behaviors": {
 							"leftButton": {
-								"onFocusGained": [
+								"onhover": [
 									{
 										"host": "playBackgroundSoundWithUrl",
 										"url": "http://soundUrl"
@@ -67,7 +67,7 @@
 								"onvideoend": []
 							},
 							"middleButton": {
-								"onFocusGained": [
+								"onhover": [
 									{
 										"host": "playBackgroundSoundWithUrl",
 										"url": "http://soundUrl"
@@ -88,7 +88,7 @@
 								"onvideoend": []
 							},
 							"rightButton": {
-								"onFocusGained": [
+								"onhover": [
 									{
 										"host": "playBackgroundSoundWithUrl",
 										"url": "http://soundUrl"
@@ -130,7 +130,7 @@
 								"y": "0",
 								"width": "1920",
 								"height": "1080",
-								"src": "https://media.truex.com/video_assets/2018-05-09/c6429d5c-f878-4203-9b9a-c0bed1199f72_large.mp4",
+								"video_url": "https://media.truex.com/video_assets/2018-05-09/c6429d5c-f878-4203-9b9a-c0bed1199f72_large.mp4",
 								"loop": false
 							}
 						],
@@ -173,7 +173,7 @@
 								"y": "0",
 								"width": "1920",
 								"height": "1080",
-								"src": "https://media.truex.com/video_assets/2018-05-09/7bee2371-6fac-44b1-8b7e-e0a3d320645f_large.mp4",
+								"video_url": "https://media.truex.com/video_assets/2018-05-09/7bee2371-6fac-44b1-8b7e-e0a3d320645f_large.mp4",
 								"loop": false
 							}
 						],
@@ -216,7 +216,7 @@
 								"y": "0",
 								"width": "1920",
 								"height": "1080",
-								"src": "https://media.truex.com/video_assets/2018-05-09/7b5557f0-cf63-40b1-b383-a67270582691_large.mp4",
+								"video_url": "https://media.truex.com/video_assets/2018-05-09/7b5557f0-cf63-40b1-b383-a67270582691_large.mp4",
 								"loop": false
 							}
 						],
@@ -259,7 +259,7 @@
 								"y": "175",
 								"width": "1138",
 								"height": "640",
-								"src": "https://media.truex.com/video_assets/2018-05-09/e0baa5cc-641f-4773-9ade-156a53f9608c_large.mp4",
+								"video_url": "https://media.truex.com/video_assets/2018-05-09/e0baa5cc-641f-4773-9ade-156a53f9608c_large.mp4",
 								"loop": true
 							},
 							{
@@ -303,7 +303,7 @@
 								"y": "175",
 								"width": "1138",
 								"height": "640",
-								"src": "https://media.truex.com/video_assets/2018-05-09/b03086b1-0578-43e5-8584-232ba9ec9f00_large.mp4",
+								"video_url": "https://media.truex.com/video_assets/2018-05-09/b03086b1-0578-43e5-8584-232ba9ec9f00_large.mp4",
 								"loop": true
 							},
 							{
@@ -347,7 +347,7 @@
 								"y": "175",
 								"width": "1138",
 								"height": "640",
-								"src": "https://media.truex.com/video_assets/2018-05-09/eb99ec73-deb9-4a85-80a1-896b97136258_large.mp4",
+								"video_url": "https://media.truex.com/video_assets/2018-05-09/eb99ec73-deb9-4a85-80a1-896b97136258_large.mp4",
 								"loop": true
 							},
 							{

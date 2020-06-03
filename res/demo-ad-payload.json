@@ -5,6 +5,36 @@
             "asset_args": {
                 "steps": [
                     {
+                        "name": "main_card",
+                        "elements": [
+                            {
+                                "type": "Button",
+                                "name": "button1",
+                                "x": "760",
+                                "y": "688",
+                                "width": "756",
+                                "height": "116",
+                                "image_url": "https://media.truex.com/image_assets/2018-12-12/aa762086-f020-4dc2-966a-6ec149e29d4e.png",
+                                "hover_image_url": "https://media.truex.com/image_assets/2018-12-12/aa762086-f020-4dc2-966a-6ec149e29d4e.png"
+                            },
+                            {
+                                "type": "Audio",
+                                "name": "backgroundAudio",
+                                "audio_url": "https://media.truex.com/audio_assets/2018-07-25/f571a072-c683-49c8-a573-0e79e6dc7161.mp3",
+                                "autoplay": true,
+                                "loop": true,
+                                "global": false
+                            },
+                            {
+                                "type": "Image",
+                                "name": "bgImage",
+                                "x": "0",
+                                "y": "0",
+                                "width": "1920",
+                                "height": "1080",
+                                "image_url": "https://media.truex.com/image_assets/2018-12-12/8ae28a59-5bf0-4d7f-9201-ed84e102e64f.jpg"
+                            }
+                        ],
                         "behaviors": {
                             "button1": {
                                 "onselect": [
@@ -17,474 +47,198 @@
                                         "host": "flagActivityForAttention"
                                     },
                                     {
-                                        "cardName": "step_question_1",
-                                        "host": "replaceStep"
+                                        "host": "replaceStep",
+                                        "cardName": "step_question_1"
                                     }
                                 ]
                             }
-                        },
-                        "elements": [
-                            {
-                                "height": "116",
-                                "hover_image_url": "https://media.truex.com/image_assets/2018-12-12/aa762086-f020-4dc2-966a-6ec149e29d4e.png",
-                                "image_url": "https://media.truex.com/image_assets/2018-12-12/aa762086-f020-4dc2-966a-6ec149e29d4e.png",
-                                "name": "button1",
-                                "type": "Button",
-                                "width": "756",
-                                "x": "760",
-                                "y": "688"
-                            },
-                            {
-                                "autoplay": true,
-                                "global": false,
-                                "loop": true,
-                                "name": "backgroundAudio",
-                                "src": "https://media.truex.com/audio_assets/2018-07-25/f571a072-c683-49c8-a573-0e79e6dc7161.mp3",
-                                "type": "Audio"
-                            },
-                            {
-                                "height": "1080",
-                                "image_url": "https://media.truex.com/image_assets/2018-12-12/8ae28a59-5bf0-4d7f-9201-ed84e102e64f.jpg",
-                                "name": "bgImage",
-                                "type": "Image",
-                                "width": "1920",
-                                "x": "0",
-                                "y": "0"
-                            }
-                        ],
-                        "name": "main_card"
+                        }
                     },
                     {
+                        "name": "step_question_1",
+                        "elements": [
+                            {
+                                "type": "Button",
+                                "name": "clear",
+                                "is_disabled": "true",
+                                "x": "0",
+                                "y": "0",
+                                "width": "1",
+                                "height": "1",
+                                "image_url": ""
+                            },
+                            {
+                                "type": "Image",
+                                "name": "hintbutton",
+                                "x": "72",
+                                "y": "750",
+                                "width": "209",
+                                "height": "90",
+                                "image_url": "https://media.truex.com/image_assets/2018-12-12/9413ff2a-c7c9-42e8-a116-d7325bcf9d1c.png",
+                                "hover_image_url": "https://media.truex.com/image_assets/2018-12-12/9413ff2a-c7c9-42e8-a116-d7325bcf9d1c.png"
+                            },
+                            {
+                                "type": "Text",
+                                "name": "drawerPoints",
+                                "x": "0",
+                                "y": "590",
+                                "width": "354",
+                                "height": "80",
+                                "text": "",
+                                "color": "0x0069B1FF",
+                                "fontName": "LargeBoldSystemFont",
+                                "alignment": "center",
+                                "vertical_alignment": "center"
+                            },
+                            {
+                                "type": "Image",
+                                "name": "bgImage",
+                                "x": "0",
+                                "y": "0",
+                                "width": "1920",
+                                "height": "1080",
+                                "image_url": "https://media.truex.com/image_assets/2018-12-12/862e138d-ba9e-4510-8b1a-3df7525ac78e.jpg"
+                            }
+                        ],
                         "behaviors": {
                             "clear": {
                                 "appear": [
                                     {
                                         "host": "setAttribute",
-                                        "key": "text",
                                         "name": "drawerPoints",
+                                        "key": "text",
                                         "value": {
                                             "key": "score"
                                         }
                                     },
                                     {
+                                        "host": "setTimeout",
+                                        "timeout": 5,
                                         "do": [
                                             {
-                                                "cardName": "step_question_1_select",
-                                                "host": "replaceStep"
+                                                "host": "replaceStep",
+                                                "cardName": "step_question_1_select"
                                             }
-                                        ],
-                                        "host": "setTimeout",
-                                        "timeout": 5
+                                        ]
                                     }
                                 ]
                             }
-                        },
-                        "elements": [
-                            {
-                                "height": "1",
-                                "image_url": "",
-                                "is_disabled": "true",
-                                "name": "clear",
-                                "type": "Button",
-                                "width": "1",
-                                "x": "0",
-                                "y": "0"
-                            },
-                            {
-                                "height": "90",
-                                "hover_image_url": "https://media.truex.com/image_assets/2018-12-12/9413ff2a-c7c9-42e8-a116-d7325bcf9d1c.png",
-                                "image_url": "https://media.truex.com/image_assets/2018-12-12/9413ff2a-c7c9-42e8-a116-d7325bcf9d1c.png",
-                                "name": "hintbutton",
-                                "type": "Image",
-                                "width": "209",
-                                "x": "72",
-                                "y": "750"
-                            },
-                            {
-                                "color": "0x0069B1FF",
-                                "fontName": "LargeBoldSystemFont",
-                                "height": "80",
-                                "horizAlign": "center",
-                                "name": "drawerPoints",
-                                "text": "",
-                                "type": "Label",
-                                "vertAlign": "center",
-                                "width": "354",
-                                "x": "0",
-                                "y": "590"
-                            },
-                            {
-                                "height": "1080",
-                                "image_url": "https://media.truex.com/image_assets/2018-12-12/862e138d-ba9e-4510-8b1a-3df7525ac78e.jpg",
-                                "name": "bgImage",
-                                "type": "Image",
-                                "width": "1920",
-                                "x": "0",
-                                "y": "0"
-                            }
-                        ],
-                        "name": "step_question_1"
+                        }
                     },
                     {
-                        "behaviors": {
-                            "answerselection1": {
-                                "onselect": [
-                                    {
-                                        "cardName": "step_question_1_wrong",
-                                        "host": "replaceStep"
-                                    }
-                                ]
-                            },
-                            "answerselection2": {
-                                "onselect": [
-                                    {
-                                        "cardName": "step_question_1_wrong",
-                                        "host": "replaceStep"
-                                    }
-                                ]
-                            },
-                            "answerselection3": {
-                                "onselect": [
-                                    {
-                                        "host": "assign",
-                                        "key": "score",
-                                        "value": {
-                                            "operation": "+",
-                                            "values": [
-                                                {
-                                                    "key": "score"
-                                                },
-                                                100
-                                            ]
-                                        }
-                                    },
-                                    {
-                                        "cardName": "step_question_1_right",
-                                        "host": "replaceStep"
-                                    }
-                                ]
-                            },
-                            "hintbutton": {
-                                "appear": [
-                                    {
-                                        "host": "setAttribute",
-                                        "key": "text",
-                                        "name": "drawerPoints",
-                                        "value": {
-                                            "key": "score"
-                                        }
-                                    }
-                                ],
-                                "onselect": [
-                                    {
-                                        "host": "playActiveAudio"
-                                    }
-                                ]
-                            }
-                        },
+                        "name": "step_question_1_select",
                         "elements": [
                             {
-                                "height": "400",
+                                "type": "Button",
+                                "name": "answerselection3",
                                 "hover_effect": "false",
-                                "hover_image_url": "https://media.truex.com/image_assets/2018-12-19/66bf6dc0-798d-4997-8a01-d58e0b8da168.png",
+                                "x": "1490",
+                                "y": "144",
+                                "width": "400",
+                                "height": "400",
                                 "image_url": "https://media.truex.com/image_assets/2018-12-19/2458d2ce-dd68-40c5-b8e4-8c163d3e8f0a.png",
-                                "name": "answerselection3",
-                                "type": "Button",
-                                "width": "400",
-                                "x": "1490",
-                                "y": "144"
+                                "hover_image_url": "https://media.truex.com/image_assets/2018-12-19/66bf6dc0-798d-4997-8a01-d58e0b8da168.png"
                             },
                             {
-                                "height": "400",
+                                "type": "Button",
+                                "name": "answerselection2",
                                 "hover_effect": "false",
-                                "hover_image_url": "https://media.truex.com/image_assets/2018-12-19/266f6cb7-b2d2-4d49-8b3c-b08ac8d12281.png",
+                                "x": "970",
+                                "y": "144",
+                                "width": "400",
+                                "height": "400",
                                 "image_url": "https://media.truex.com/image_assets/2018-12-19/d79f2a80-eb7d-48e2-98d0-8cca12ee89cf.png",
-                                "name": "answerselection2",
-                                "type": "Button",
-                                "width": "400",
-                                "x": "970",
-                                "y": "144"
+                                "hover_image_url": "https://media.truex.com/image_assets/2018-12-19/266f6cb7-b2d2-4d49-8b3c-b08ac8d12281.png"
                             },
                             {
+                                "type": "Button",
+                                "name": "answerselection1",
                                 "guide": "bottom, top",
-                                "height": "400",
                                 "hover_effect": "false",
-                                "hover_image_url": "https://media.truex.com/image_assets/2018-12-19/686b840e-ea90-4797-a766-964be5e0d388.png",
+                                "x": "449",
+                                "y": "144",
+                                "width": "400",
+                                "height": "400",
                                 "image_url": "https://media.truex.com/image_assets/2018-12-19/68760aa7-de0e-4998-b54d-5a74d03119db.png",
-                                "name": "answerselection1",
-                                "type": "Button",
-                                "width": "400",
-                                "x": "449",
-                                "y": "144"
+                                "hover_image_url": "https://media.truex.com/image_assets/2018-12-19/686b840e-ea90-4797-a766-964be5e0d388.png"
                             },
                             {
-                                "guide": "bottom, top",
-                                "height": "90",
-                                "hover_image_url": "https://media.truex.com/image_assets/2018-12-12/9413ff2a-c7c9-42e8-a116-d7325bcf9d1c.png",
-                                "image_url": "https://media.truex.com/image_assets/2018-12-12/9413ff2a-c7c9-42e8-a116-d7325bcf9d1c.png",
+                                "type": "Button",
                                 "name": "hintbutton",
-                                "type": "Button",
-                                "width": "209",
                                 "x": "72",
-                                "y": "750"
+                                "y": "750",
+                                "width": "209",
+                                "height": "90",
+                                "image_url": "https://media.truex.com/image_assets/2018-12-12/9413ff2a-c7c9-42e8-a116-d7325bcf9d1c.png",
+                                "hover_image_url": "https://media.truex.com/image_assets/2018-12-12/9413ff2a-c7c9-42e8-a116-d7325bcf9d1c.png",
+                                "guide": "bottom, top"
                             },
                             {
+                                "type": "Text",
+                                "name": "drawerPoints",
+                                "x": "0",
+                                "y": "590",
+                                "width": "354",
+                                "height": "80",
+                                "text": "0",
                                 "color": "0x0069B1FF",
                                 "fontName": "LargeBoldSystemFont",
-                                "height": "80",
-                                "horizAlign": "center",
-                                "name": "drawerPoints",
-                                "text": "0",
-                                "type": "Label",
-                                "vertAlign": "center",
-                                "width": "354",
-                                "x": "0",
-                                "y": "590"
+                                "alignment": "center",
+                                "vertical_alignment": "center"
                             },
                             {
-                                "height": "1080",
-                                "image_url": "https://media.truex.com/image_assets/2018-12-13/70188adb-86b7-4473-a60b-3dbaa3b65e5c.jpg",
-                                "name": "bgImage",
                                 "type": "Image",
-                                "width": "1920",
+                                "name": "bgImage",
                                 "x": "0",
-                                "y": "0"
+                                "y": "0",
+                                "width": "1920",
+                                "height": "1080",
+                                "image_url": "https://media.truex.com/image_assets/2018-12-13/70188adb-86b7-4473-a60b-3dbaa3b65e5c.jpg"
                             },
                             {
-                                "autoplay": false,
-                                "global": false,
-                                "loop": false,
+                                "type": "Audio",
                                 "name": "step_question_1_backgroundAudio",
-                                "src": "https://media.truex.com/audio_assets/2018-07-25/29c9b3cd-026f-40bb-9ec9-b0ad4d5f2e58.mp3",
-                                "type": "Audio"
+                                "audio_url": "https://media.truex.com/audio_assets/2018-07-25/29c9b3cd-026f-40bb-9ec9-b0ad4d5f2e58.mp3",
+                                "autoplay": false,
+                                "loop": false,
+                                "global": false
                             }
                         ],
-                        "name": "step_question_1_select"
-                    },
-                    {
                         "behaviors": {
-                            "clear": {
+                            "hintbutton": {
                                 "appear": [
                                     {
                                         "host": "setAttribute",
-                                        "key": "text",
                                         "name": "drawerPoints",
+                                        "key": "text",
                                         "value": {
                                             "key": "score"
                                         }
-                                    },
+                                    }
+                                ],
+                                "onselect": [
                                     {
-                                        "do": [
-                                            {
-                                                "cardName": "step_question_2",
-                                                "host": "replaceStep"
-                                            }
-                                        ],
-                                        "host": "setTimeout",
-                                        "timeout": 5
+                                        "host": "playActiveAudio"
                                     }
                                 ]
-                            }
-                        },
-                        "elements": [
-                            {
-                                "height": "1",
-                                "image_url": "",
-                                "is_disabled": "true",
-                                "name": "clear",
-                                "type": "Button",
-                                "width": "1",
-                                "x": "0",
-                                "y": "0"
                             },
-                            {
-                                "height": "90",
-                                "hover_image_url": "https://media.truex.com/image_assets/2018-12-12/9413ff2a-c7c9-42e8-a116-d7325bcf9d1c.png",
-                                "image_url": "https://media.truex.com/image_assets/2018-12-12/9413ff2a-c7c9-42e8-a116-d7325bcf9d1c.png",
-                                "name": "hintbutton",
-                                "type": "Image",
-                                "width": "209",
-                                "x": "72",
-                                "y": "750"
-                            },
-                            {
-                                "color": "0x0069B1FF",
-                                "fontName": "LargeBoldSystemFont",
-                                "height": "80",
-                                "horizAlign": "center",
-                                "name": "drawerPoints",
-                                "text": "",
-                                "type": "Label",
-                                "vertAlign": "center",
-                                "width": "354",
-                                "x": "0",
-                                "y": "590"
-                            },
-                            {
-                                "height": "1080",
-                                "image_url": "https://media.truex.com/image_assets/2018-12-12/cb97953a-be78-4297-97d2-c6db3a63db77.jpg",
-                                "name": "bgImage",
-                                "type": "Image",
-                                "width": "1920",
-                                "x": "0",
-                                "y": "0"
-                            }
-                        ],
-                        "name": "step_question_1_right"
-                    },
-                    {
-                        "behaviors": {
-                            "clear": {
-                                "appear": [
-                                    {
-                                        "host": "setAttribute",
-                                        "key": "text",
-                                        "name": "drawerPoints",
-                                        "value": {
-                                            "key": "score"
-                                        }
-                                    },
-                                    {
-                                        "do": [
-                                            {
-                                                "cardName": "step_question_2",
-                                                "host": "replaceStep"
-                                            }
-                                        ],
-                                        "host": "setTimeout",
-                                        "timeout": 5
-                                    }
-                                ]
-                            }
-                        },
-                        "elements": [
-                            {
-                                "height": "1",
-                                "image_url": "",
-                                "is_disabled": "true",
-                                "name": "clear",
-                                "type": "Button",
-                                "width": "1",
-                                "x": "0",
-                                "y": "0"
-                            },
-                            {
-                                "height": "90",
-                                "hover_image_url": "https://media.truex.com/image_assets/2018-12-12/9413ff2a-c7c9-42e8-a116-d7325bcf9d1c.png",
-                                "image_url": "https://media.truex.com/image_assets/2018-12-12/9413ff2a-c7c9-42e8-a116-d7325bcf9d1c.png",
-                                "name": "hintbutton",
-                                "type": "Image",
-                                "width": "209",
-                                "x": "72",
-                                "y": "750"
-                            },
-                            {
-                                "color": "0x0069B1FF",
-                                "fontName": "LargeBoldSystemFont",
-                                "height": "80",
-                                "horizAlign": "center",
-                                "name": "drawerPoints",
-                                "text": "",
-                                "type": "Label",
-                                "vertAlign": "center",
-                                "width": "354",
-                                "x": "0",
-                                "y": "590"
-                            },
-                            {
-                                "height": "1080",
-                                "image_url": "https://media.truex.com/image_assets/2018-12-12/b42ecea8-2e70-4e95-a52f-9a41c1f5eb51.jpg",
-                                "name": "bgImage",
-                                "type": "Image",
-                                "width": "1920",
-                                "x": "0",
-                                "y": "0"
-                            }
-                        ],
-                        "name": "step_question_1_wrong"
-                    },
-                    {
-                        "behaviors": {
-                            "clear": {
-                                "appear": [
-                                    {
-                                        "host": "setAttribute",
-                                        "key": "text",
-                                        "name": "drawerPoints",
-                                        "value": {
-                                            "key": "score"
-                                        }
-                                    },
-                                    {
-                                        "do": [
-                                            {
-                                                "cardName": "step_question_2_select",
-                                                "host": "replaceStep"
-                                            }
-                                        ],
-                                        "host": "setTimeout",
-                                        "timeout": 5
-                                    }
-                                ]
-                            }
-                        },
-                        "elements": [
-                            {
-                                "height": "1",
-                                "image_url": "",
-                                "is_disabled": "true",
-                                "name": "clear",
-                                "type": "Button",
-                                "width": "1",
-                                "x": "0",
-                                "y": "0"
-                            },
-                            {
-                                "height": "90",
-                                "hover_image_url": "https://media.truex.com/image_assets/2018-12-12/9413ff2a-c7c9-42e8-a116-d7325bcf9d1c.png",
-                                "image_url": "https://media.truex.com/image_assets/2018-12-12/9413ff2a-c7c9-42e8-a116-d7325bcf9d1c.png",
-                                "name": "hintbutton",
-                                "type": "Image",
-                                "width": "209",
-                                "x": "72",
-                                "y": "750"
-                            },
-                            {
-                                "color": "0x0069B1FF",
-                                "fontName": "LargeBoldSystemFont",
-                                "height": "80",
-                                "horizAlign": "center",
-                                "name": "drawerPoints",
-                                "text": "",
-                                "type": "Label",
-                                "vertAlign": "center",
-                                "width": "354",
-                                "x": "0",
-                                "y": "590"
-                            },
-                            {
-                                "height": "1080",
-                                "image_url": "https://media.truex.com/image_assets/2018-12-12/7d1455ef-6d1d-40a7-a10a-bdc3327627a8.jpg",
-                                "name": "bgImage",
-                                "type": "Image",
-                                "width": "1920",
-                                "x": "0",
-                                "y": "0"
-                            }
-                        ],
-                        "name": "step_question_2"
-                    },
-                    {
-                        "behaviors": {
                             "answerselection1": {
                                 "onselect": [
                                     {
-                                        "cardName": "step_question_2_wrong",
-                                        "host": "replaceStep"
+                                        "host": "replaceStep",
+                                        "cardName": "step_question_1_wrong"
                                     }
                                 ]
                             },
                             "answerselection2": {
+                                "onselect": [
+                                    {
+                                        "host": "replaceStep",
+                                        "cardName": "step_question_1_wrong"
+                                    }
+                                ]
+                            },
+                            "answerselection3": {
                                 "onselect": [
                                     {
                                         "host": "assign",
@@ -500,344 +254,685 @@
                                         }
                                     },
                                     {
-                                        "cardName": "step_question_2_right",
-                                        "host": "replaceStep"
-                                    }
-                                ]
-                            },
-                            "answerselection3": {
-                                "onselect": [
-                                    {
-                                        "cardName": "step_question_2_wrong",
-                                        "host": "replaceStep"
-                                    }
-                                ]
-                            },
-                            "hintbutton": {
-                                "appear": [
-                                    {
-                                        "host": "setAttribute",
-                                        "key": "text",
-                                        "name": "drawerPoints",
-                                        "value": {
-                                            "key": "score"
-                                        }
-                                    }
-                                ],
-                                "onselect": [
-                                    {
-                                        "host": "playActiveAudio"
+                                        "host": "replaceStep",
+                                        "cardName": "step_question_1_right"
                                     }
                                 ]
                             }
-                        },
+                        }
+                    },
+                    {
+                        "name": "step_question_1_right",
                         "elements": [
                             {
-                                "height": "400",
+                                "type": "Button",
+                                "name": "clear",
+                                "is_disabled": "true",
+                                "x": "0",
+                                "y": "0",
+                                "width": "1",
+                                "height": "1",
+                                "image_url": ""
+                            },
+                            {
+                                "type": "Image",
+                                "name": "hintbutton",
+                                "x": "72",
+                                "y": "750",
+                                "width": "209",
+                                "height": "90",
+                                "image_url": "https://media.truex.com/image_assets/2018-12-12/9413ff2a-c7c9-42e8-a116-d7325bcf9d1c.png",
+                                "hover_image_url": "https://media.truex.com/image_assets/2018-12-12/9413ff2a-c7c9-42e8-a116-d7325bcf9d1c.png"
+                            },
+                            {
+                                "type": "Text",
+                                "name": "drawerPoints",
+                                "x": "0",
+                                "y": "590",
+                                "width": "354",
+                                "height": "80",
+                                "text": "",
+                                "color": "0x0069B1FF",
+                                "fontName": "LargeBoldSystemFont",
+                                "alignment": "center",
+                                "vertical_alignment": "center"
+                            },
+                            {
+                                "type": "Image",
+                                "name": "bgImage",
+                                "x": "0",
+                                "y": "0",
+                                "width": "1920",
+                                "height": "1080",
+                                "image_url": "https://media.truex.com/image_assets/2018-12-12/cb97953a-be78-4297-97d2-c6db3a63db77.jpg"
+                            }
+                        ],
+                        "behaviors": {
+                            "clear": {
+                                "appear": [
+                                    {
+                                        "host": "setAttribute",
+                                        "name": "drawerPoints",
+                                        "key": "text",
+                                        "value": {
+                                            "key": "score"
+                                        }
+                                    },
+                                    {
+                                        "host": "setTimeout",
+                                        "timeout": 5,
+                                        "do": [
+                                            {
+                                                "host": "replaceStep",
+                                                "cardName": "step_question_2"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "name": "step_question_1_wrong",
+                        "elements": [
+                            {
+                                "type": "Button",
+                                "name": "clear",
+                                "is_disabled": "true",
+                                "x": "0",
+                                "y": "0",
+                                "width": "1",
+                                "height": "1",
+                                "image_url": ""
+                            },
+                            {
+                                "type": "Image",
+                                "name": "hintbutton",
+                                "x": "72",
+                                "y": "750",
+                                "width": "209",
+                                "height": "90",
+                                "image_url": "https://media.truex.com/image_assets/2018-12-12/9413ff2a-c7c9-42e8-a116-d7325bcf9d1c.png",
+                                "hover_image_url": "https://media.truex.com/image_assets/2018-12-12/9413ff2a-c7c9-42e8-a116-d7325bcf9d1c.png"
+                            },
+                            {
+                                "type": "Text",
+                                "name": "drawerPoints",
+                                "x": "0",
+                                "y": "590",
+                                "width": "354",
+                                "height": "80",
+                                "text": "",
+                                "color": "0x0069B1FF",
+                                "fontName": "LargeBoldSystemFont",
+                                "alignment": "center",
+                                "vertical_alignment": "center"
+                            },
+                            {
+                                "type": "Image",
+                                "name": "bgImage",
+                                "x": "0",
+                                "y": "0",
+                                "width": "1920",
+                                "height": "1080",
+                                "image_url": "https://media.truex.com/image_assets/2018-12-12/b42ecea8-2e70-4e95-a52f-9a41c1f5eb51.jpg"
+                            }
+                        ],
+                        "behaviors": {
+                            "clear": {
+                                "appear": [
+                                    {
+                                        "host": "setAttribute",
+                                        "name": "drawerPoints",
+                                        "key": "text",
+                                        "value": {
+                                            "key": "score"
+                                        }
+                                    },
+                                    {
+                                        "host": "setTimeout",
+                                        "timeout": 5,
+                                        "do": [
+                                            {
+                                                "host": "replaceStep",
+                                                "cardName": "step_question_2"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "name": "step_question_2",
+                        "elements": [
+                            {
+                                "type": "Button",
+                                "name": "clear",
+                                "is_disabled": "true",
+                                "x": "0",
+                                "y": "0",
+                                "width": "1",
+                                "height": "1",
+                                "image_url": ""
+                            },
+                            {
+                                "type": "Image",
+                                "name": "hintbutton",
+                                "x": "72",
+                                "y": "750",
+                                "width": "209",
+                                "height": "90",
+                                "image_url": "https://media.truex.com/image_assets/2018-12-12/9413ff2a-c7c9-42e8-a116-d7325bcf9d1c.png",
+                                "hover_image_url": "https://media.truex.com/image_assets/2018-12-12/9413ff2a-c7c9-42e8-a116-d7325bcf9d1c.png"
+                            },
+                            {
+                                "type": "Text",
+                                "name": "drawerPoints",
+                                "x": "0",
+                                "y": "590",
+                                "width": "354",
+                                "height": "80",
+                                "text": "",
+                                "color": "0x0069B1FF",
+                                "fontName": "LargeBoldSystemFont",
+                                "alignment": "center",
+                                "vertical_alignment": "center"
+                            },
+                            {
+                                "type": "Image",
+                                "name": "bgImage",
+                                "x": "0",
+                                "y": "0",
+                                "width": "1920",
+                                "height": "1080",
+                                "image_url": "https://media.truex.com/image_assets/2018-12-12/7d1455ef-6d1d-40a7-a10a-bdc3327627a8.jpg"
+                            }
+                        ],
+                        "behaviors": {
+                            "clear": {
+                                "appear": [
+                                    {
+                                        "host": "setAttribute",
+                                        "name": "drawerPoints",
+                                        "key": "text",
+                                        "value": {
+                                            "key": "score"
+                                        }
+                                    },
+                                    {
+                                        "host": "setTimeout",
+                                        "timeout": 5,
+                                        "do": [
+                                            {
+                                                "host": "replaceStep",
+                                                "cardName": "step_question_2_select"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "name": "step_question_2_select",
+                        "elements": [
+                            {
+                                "type": "Button",
+                                "name": "answerselection3",
                                 "hover_effect": "false",
-                                "hover_image_url": "https://media.truex.com/image_assets/2018-12-19/9b59fa57-86ff-4896-b630-94542115aabd.png",
+                                "x": "1490",
+                                "y": "144",
+                                "width": "400",
+                                "height": "400",
                                 "image_url": "https://media.truex.com/image_assets/2018-12-19/3b37005a-bcb4-42b1-93f1-f2785e887cc0.png",
-                                "name": "answerselection3",
-                                "type": "Button",
-                                "width": "400",
-                                "x": "1490",
-                                "y": "144"
+                                "hover_image_url": "https://media.truex.com/image_assets/2018-12-19/9b59fa57-86ff-4896-b630-94542115aabd.png"
                             },
                             {
-                                "height": "400",
-                                "hover_effect": "false",
-                                "hover_image_url": "https://media.truex.com/image_assets/2018-12-19/ea5d9cb3-c9a4-435f-8f00-d3aa0fac94c5.png",
-                                "image_url": "https://media.truex.com/image_assets/2018-12-19/07cd58ae-1f64-4b24-8a12-4c33bede7a21.png",
+                                "type": "Button",
                                 "name": "answerselection2",
-                                "type": "Button",
-                                "width": "400",
-                                "x": "970",
-                                "y": "144"
-                            },
-                            {
-                                "guide": "bottom, top",
-                                "height": "400",
                                 "hover_effect": "false",
-                                "hover_image_url": "https://media.truex.com/image_assets/2018-12-19/1dec3b11-5440-4921-ae64-7bcfc790ecae.png",
-                                "image_url": "https://media.truex.com/image_assets/2018-12-19/7331f30f-3c9c-4a80-bfd2-0f54aa5b1587.png",
-                                "name": "answerselection1",
-                                "type": "Button",
+                                "x": "970",
+                                "y": "144",
                                 "width": "400",
-                                "x": "449",
-                                "y": "144"
+                                "height": "400",
+                                "image_url": "https://media.truex.com/image_assets/2018-12-19/07cd58ae-1f64-4b24-8a12-4c33bede7a21.png",
+                                "hover_image_url": "https://media.truex.com/image_assets/2018-12-19/ea5d9cb3-c9a4-435f-8f00-d3aa0fac94c5.png"
                             },
                             {
+                                "type": "Button",
+                                "name": "answerselection1",
                                 "guide": "bottom, top",
-                                "height": "90",
-                                "hover_image_url": "https://media.truex.com/image_assets/2018-12-12/9413ff2a-c7c9-42e8-a116-d7325bcf9d1c.png",
-                                "image_url": "https://media.truex.com/image_assets/2018-12-12/9413ff2a-c7c9-42e8-a116-d7325bcf9d1c.png",
-                                "name": "hintbutton",
-                                "type": "Button",
-                                "width": "209",
-                                "x": "72",
-                                "y": "750"
+                                "hover_effect": "false",
+                                "x": "449",
+                                "y": "144",
+                                "width": "400",
+                                "height": "400",
+                                "image_url": "https://media.truex.com/image_assets/2018-12-19/7331f30f-3c9c-4a80-bfd2-0f54aa5b1587.png",
+                                "hover_image_url": "https://media.truex.com/image_assets/2018-12-19/1dec3b11-5440-4921-ae64-7bcfc790ecae.png"
                             },
                             {
-                                "color": "0x0069B1FF",
-                                "fontName": "LargeBoldSystemFont",
-                                "height": "80",
-                                "horizAlign": "center",
+                                "type": "Button",
+                                "name": "hintbutton",
+                                "x": "72",
+                                "y": "750",
+                                "width": "209",
+                                "height": "90",
+                                "image_url": "https://media.truex.com/image_assets/2018-12-12/9413ff2a-c7c9-42e8-a116-d7325bcf9d1c.png",
+                                "hover_image_url": "https://media.truex.com/image_assets/2018-12-12/9413ff2a-c7c9-42e8-a116-d7325bcf9d1c.png",
+                                "guide": "bottom, top"
+                            },
+                            {
+                                "type": "Text",
                                 "name": "drawerPoints",
+                                "x": "0",
+                                "y": "590",
+                                "width": "354",
+                                "height": "80",
                                 "text": "0",
-                                "type": "Label",
-                                "vertAlign": "center",
-                                "width": "354",
-                                "x": "0",
-                                "y": "590"
+                                "color": "0x0069B1FF",
+                                "fontName": "LargeBoldSystemFont",
+                                "alignment": "center",
+                                "vertical_alignment": "center"
                             },
                             {
-                                "height": "1080",
-                                "image_url": "https://media.truex.com/image_assets/2018-12-13/67e4b11a-1a8c-4d90-b6dc-1ae3708ccac9.jpg",
-                                "name": "bgImage",
                                 "type": "Image",
-                                "width": "1920",
+                                "name": "bgImage",
                                 "x": "0",
-                                "y": "0"
+                                "y": "0",
+                                "width": "1920",
+                                "height": "1080",
+                                "image_url": "https://media.truex.com/image_assets/2018-12-13/67e4b11a-1a8c-4d90-b6dc-1ae3708ccac9.jpg"
                             },
                             {
-                                "autoplay": false,
-                                "global": false,
-                                "loop": false,
+                                "type": "Audio",
                                 "name": "step_question_2_backgroundAudio",
-                                "src": "https://media.truex.com/audio_assets/2018-07-25/c9e8c5fa-e189-4b0b-a3d1-af31e0d9549c.mp3",
-                                "type": "Audio"
+                                "audio_url": "https://media.truex.com/audio_assets/2018-07-25/c9e8c5fa-e189-4b0b-a3d1-af31e0d9549c.mp3",
+                                "autoplay": false,
+                                "loop": false,
+                                "global": false
                             }
                         ],
-                        "name": "step_question_2_select"
-                    },
-                    {
                         "behaviors": {
-                            "clear": {
+                            "hintbutton": {
                                 "appear": [
                                     {
                                         "host": "setAttribute",
-                                        "key": "text",
                                         "name": "drawerPoints",
+                                        "key": "text",
                                         "value": {
                                             "key": "score"
                                         }
-                                    },
+                                    }
+                                ],
+                                "onselect": [
                                     {
-                                        "do": [
-                                            {
-                                                "cardName": "step_question_3",
-                                                "host": "replaceStep"
-                                            }
-                                        ],
-                                        "host": "setTimeout",
-                                        "timeout": 5
+                                        "host": "playActiveAudio"
                                     }
                                 ]
-                            }
-                        },
-                        "elements": [
-                            {
-                                "height": "1",
-                                "image_url": "",
-                                "is_disabled": "true",
-                                "name": "clear",
-                                "type": "Button",
-                                "width": "1",
-                                "x": "0",
-                                "y": "0"
                             },
-                            {
-                                "height": "90",
-                                "hover_image_url": "https://media.truex.com/image_assets/2018-12-12/9413ff2a-c7c9-42e8-a116-d7325bcf9d1c.png",
-                                "image_url": "https://media.truex.com/image_assets/2018-12-12/9413ff2a-c7c9-42e8-a116-d7325bcf9d1c.png",
-                                "name": "hintbutton",
-                                "type": "Image",
-                                "width": "209",
-                                "x": "72",
-                                "y": "750"
-                            },
-                            {
-                                "color": "0x0069B1FF",
-                                "fontName": "LargeBoldSystemFont",
-                                "height": "80",
-                                "horizAlign": "center",
-                                "name": "drawerPoints",
-                                "text": "",
-                                "type": "Label",
-                                "vertAlign": "center",
-                                "width": "354",
-                                "x": "0",
-                                "y": "590"
-                            },
-                            {
-                                "height": "1080",
-                                "image_url": "https://media.truex.com/image_assets/2018-12-12/c824d82f-90ce-4d60-893d-5ff3606d5a78.jpg",
-                                "name": "bgImage",
-                                "type": "Image",
-                                "width": "1920",
-                                "x": "0",
-                                "y": "0"
-                            }
-                        ],
-                        "name": "step_question_2_right"
-                    },
-                    {
-                        "behaviors": {
-                            "clear": {
-                                "appear": [
-                                    {
-                                        "host": "setAttribute",
-                                        "key": "text",
-                                        "name": "drawerPoints",
-                                        "value": {
-                                            "key": "score"
-                                        }
-                                    },
-                                    {
-                                        "do": [
-                                            {
-                                                "cardName": "step_question_3",
-                                                "host": "replaceStep"
-                                            }
-                                        ],
-                                        "host": "setTimeout",
-                                        "timeout": 5
-                                    }
-                                ]
-                            }
-                        },
-                        "elements": [
-                            {
-                                "height": "1",
-                                "image_url": "",
-                                "is_disabled": "true",
-                                "name": "clear",
-                                "type": "Button",
-                                "width": "1",
-                                "x": "0",
-                                "y": "0"
-                            },
-                            {
-                                "height": "90",
-                                "hover_image_url": "https://media.truex.com/image_assets/2018-12-12/9413ff2a-c7c9-42e8-a116-d7325bcf9d1c.png",
-                                "image_url": "https://media.truex.com/image_assets/2018-12-12/9413ff2a-c7c9-42e8-a116-d7325bcf9d1c.png",
-                                "name": "hintbutton",
-                                "type": "Image",
-                                "width": "209",
-                                "x": "72",
-                                "y": "750"
-                            },
-                            {
-                                "color": "0x0069B1FF",
-                                "fontName": "LargeBoldSystemFont",
-                                "height": "80",
-                                "horizAlign": "center",
-                                "name": "drawerPoints",
-                                "text": "",
-                                "type": "Label",
-                                "vertAlign": "center",
-                                "width": "354",
-                                "x": "0",
-                                "y": "590"
-                            },
-                            {
-                                "height": "1080",
-                                "image_url": "https://media.truex.com/image_assets/2018-12-12/5538956d-e173-4630-b36a-77af87d7ef9d.jpg",
-                                "name": "bgImage",
-                                "type": "Image",
-                                "width": "1920",
-                                "x": "0",
-                                "y": "0"
-                            }
-                        ],
-                        "name": "step_question_2_wrong"
-                    },
-                    {
-                        "behaviors": {
-                            "clear": {
-                                "appear": [
-                                    {
-                                        "host": "setAttribute",
-                                        "key": "text",
-                                        "name": "drawerPoints",
-                                        "value": {
-                                            "key": "score"
-                                        }
-                                    },
-                                    {
-                                        "do": [
-                                            {
-                                                "cardName": "step_question_3_select",
-                                                "host": "replaceStep"
-                                            }
-                                        ],
-                                        "host": "setTimeout",
-                                        "timeout": 5
-                                    }
-                                ]
-                            }
-                        },
-                        "elements": [
-                            {
-                                "height": "1",
-                                "image_url": "",
-                                "is_disabled": "true",
-                                "name": "clear",
-                                "type": "Button",
-                                "width": "1",
-                                "x": "0",
-                                "y": "0"
-                            },
-                            {
-                                "height": "90",
-                                "hover_image_url": "https://media.truex.com/image_assets/2018-12-12/9413ff2a-c7c9-42e8-a116-d7325bcf9d1c.png",
-                                "image_url": "https://media.truex.com/image_assets/2018-12-12/9413ff2a-c7c9-42e8-a116-d7325bcf9d1c.png",
-                                "name": "hintbutton",
-                                "type": "Image",
-                                "width": "209",
-                                "x": "72",
-                                "y": "750"
-                            },
-                            {
-                                "color": "0x0069B1FF",
-                                "fontName": "LargeBoldSystemFont",
-                                "height": "80",
-                                "horizAlign": "center",
-                                "name": "drawerPoints",
-                                "text": "",
-                                "type": "Label",
-                                "vertAlign": "center",
-                                "width": "354",
-                                "x": "0",
-                                "y": "590"
-                            },
-                            {
-                                "height": "1080",
-                                "image_url": "https://media.truex.com/image_assets/2018-12-12/54f781ea-f4d4-4562-ac8b-653b8c20887c.jpg",
-                                "name": "bgImage",
-                                "type": "Image",
-                                "width": "1920",
-                                "x": "0",
-                                "y": "0"
-                            }
-                        ],
-                        "name": "step_question_3"
-                    },
-                    {
-                        "behaviors": {
                             "answerselection1": {
                                 "onselect": [
                                     {
-                                        "cardName": "step_question_3_wrong",
-                                        "host": "replaceStep"
+                                        "host": "replaceStep",
+                                        "cardName": "step_question_2_wrong"
                                     }
                                 ]
                             },
                             "answerselection2": {
                                 "onselect": [
                                     {
-                                        "cardName": "step_question_3_wrong",
-                                        "host": "replaceStep"
+                                        "host": "assign",
+                                        "key": "score",
+                                        "value": {
+                                            "operation": "+",
+                                            "values": [
+                                                {
+                                                    "key": "score"
+                                                },
+                                                100
+                                            ]
+                                        }
+                                    },
+                                    {
+                                        "host": "replaceStep",
+                                        "cardName": "step_question_2_right"
+                                    }
+                                ]
+                            },
+                            "answerselection3": {
+                                "onselect": [
+                                    {
+                                        "host": "replaceStep",
+                                        "cardName": "step_question_2_wrong"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "name": "step_question_2_right",
+                        "elements": [
+                            {
+                                "type": "Button",
+                                "name": "clear",
+                                "is_disabled": "true",
+                                "x": "0",
+                                "y": "0",
+                                "width": "1",
+                                "height": "1",
+                                "image_url": ""
+                            },
+                            {
+                                "type": "Image",
+                                "name": "hintbutton",
+                                "x": "72",
+                                "y": "750",
+                                "width": "209",
+                                "height": "90",
+                                "image_url": "https://media.truex.com/image_assets/2018-12-12/9413ff2a-c7c9-42e8-a116-d7325bcf9d1c.png",
+                                "hover_image_url": "https://media.truex.com/image_assets/2018-12-12/9413ff2a-c7c9-42e8-a116-d7325bcf9d1c.png"
+                            },
+                            {
+                                "type": "Text",
+                                "name": "drawerPoints",
+                                "x": "0",
+                                "y": "590",
+                                "width": "354",
+                                "height": "80",
+                                "text": "",
+                                "color": "0x0069B1FF",
+                                "fontName": "LargeBoldSystemFont",
+                                "alignment": "center",
+                                "vertical_alignment": "center"
+                            },
+                            {
+                                "type": "Image",
+                                "name": "bgImage",
+                                "x": "0",
+                                "y": "0",
+                                "width": "1920",
+                                "height": "1080",
+                                "image_url": "https://media.truex.com/image_assets/2018-12-12/c824d82f-90ce-4d60-893d-5ff3606d5a78.jpg"
+                            }
+                        ],
+                        "behaviors": {
+                            "clear": {
+                                "appear": [
+                                    {
+                                        "host": "setAttribute",
+                                        "name": "drawerPoints",
+                                        "key": "text",
+                                        "value": {
+                                            "key": "score"
+                                        }
+                                    },
+                                    {
+                                        "host": "setTimeout",
+                                        "timeout": 5,
+                                        "do": [
+                                            {
+                                                "host": "replaceStep",
+                                                "cardName": "step_question_3"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "name": "step_question_2_wrong",
+                        "elements": [
+                            {
+                                "type": "Button",
+                                "name": "clear",
+                                "is_disabled": "true",
+                                "x": "0",
+                                "y": "0",
+                                "width": "1",
+                                "height": "1",
+                                "image_url": ""
+                            },
+                            {
+                                "type": "Image",
+                                "name": "hintbutton",
+                                "x": "72",
+                                "y": "750",
+                                "width": "209",
+                                "height": "90",
+                                "image_url": "https://media.truex.com/image_assets/2018-12-12/9413ff2a-c7c9-42e8-a116-d7325bcf9d1c.png",
+                                "hover_image_url": "https://media.truex.com/image_assets/2018-12-12/9413ff2a-c7c9-42e8-a116-d7325bcf9d1c.png"
+                            },
+                            {
+                                "type": "Text",
+                                "name": "drawerPoints",
+                                "x": "0",
+                                "y": "590",
+                                "width": "354",
+                                "height": "80",
+                                "text": "",
+                                "color": "0x0069B1FF",
+                                "fontName": "LargeBoldSystemFont",
+                                "alignment": "center",
+                                "vertical_alignment": "center"
+                            },
+                            {
+                                "type": "Image",
+                                "name": "bgImage",
+                                "x": "0",
+                                "y": "0",
+                                "width": "1920",
+                                "height": "1080",
+                                "image_url": "https://media.truex.com/image_assets/2018-12-12/5538956d-e173-4630-b36a-77af87d7ef9d.jpg"
+                            }
+                        ],
+                        "behaviors": {
+                            "clear": {
+                                "appear": [
+                                    {
+                                        "host": "setAttribute",
+                                        "name": "drawerPoints",
+                                        "key": "text",
+                                        "value": {
+                                            "key": "score"
+                                        }
+                                    },
+                                    {
+                                        "host": "setTimeout",
+                                        "timeout": 5,
+                                        "do": [
+                                            {
+                                                "host": "replaceStep",
+                                                "cardName": "step_question_3"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "name": "step_question_3",
+                        "elements": [
+                            {
+                                "type": "Button",
+                                "name": "clear",
+                                "is_disabled": "true",
+                                "x": "0",
+                                "y": "0",
+                                "width": "1",
+                                "height": "1",
+                                "image_url": ""
+                            },
+                            {
+                                "type": "Image",
+                                "name": "hintbutton",
+                                "x": "72",
+                                "y": "750",
+                                "width": "209",
+                                "height": "90",
+                                "image_url": "https://media.truex.com/image_assets/2018-12-12/9413ff2a-c7c9-42e8-a116-d7325bcf9d1c.png",
+                                "hover_image_url": "https://media.truex.com/image_assets/2018-12-12/9413ff2a-c7c9-42e8-a116-d7325bcf9d1c.png"
+                            },
+                            {
+                                "type": "Text",
+                                "name": "drawerPoints",
+                                "x": "0",
+                                "y": "590",
+                                "width": "354",
+                                "height": "80",
+                                "text": "",
+                                "color": "0x0069B1FF",
+                                "fontName": "LargeBoldSystemFont",
+                                "alignment": "center",
+                                "vertical_alignment": "center"
+                            },
+                            {
+                                "type": "Image",
+                                "name": "bgImage",
+                                "x": "0",
+                                "y": "0",
+                                "width": "1920",
+                                "height": "1080",
+                                "image_url": "https://media.truex.com/image_assets/2018-12-12/54f781ea-f4d4-4562-ac8b-653b8c20887c.jpg"
+                            }
+                        ],
+                        "behaviors": {
+                            "clear": {
+                                "appear": [
+                                    {
+                                        "host": "setAttribute",
+                                        "name": "drawerPoints",
+                                        "key": "text",
+                                        "value": {
+                                            "key": "score"
+                                        }
+                                    },
+                                    {
+                                        "host": "setTimeout",
+                                        "timeout": 5,
+                                        "do": [
+                                            {
+                                                "host": "replaceStep",
+                                                "cardName": "step_question_3_select"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "name": "step_question_3_select",
+                        "elements": [
+                            {
+                                "type": "Button",
+                                "name": "answerselection3",
+                                "hover_effect": "false",
+                                "x": "1490",
+                                "y": "144",
+                                "width": "400",
+                                "height": "400",
+                                "image_url": "https://media.truex.com/image_assets/2018-12-19/29d207e2-d9e6-479f-9f36-e8d64a394e18.png",
+                                "hover_image_url": "https://media.truex.com/image_assets/2018-12-19/b3999537-61ee-4338-b3c0-63d5da252b6f.png"
+                            },
+                            {
+                                "type": "Button",
+                                "name": "answerselection2",
+                                "hover_effect": "false",
+                                "x": "970",
+                                "y": "144",
+                                "width": "400",
+                                "height": "400",
+                                "image_url": "https://media.truex.com/image_assets/2018-12-19/f00e990d-ae3b-46f6-a423-f98dc642131a.png",
+                                "hover_image_url": "https://media.truex.com/image_assets/2018-12-19/380da852-a214-4cf3-81e9-cad2356a4d8a.png"
+                            },
+                            {
+                                "type": "Button",
+                                "name": "answerselection1",
+                                "guide": "bottom, top",
+                                "hover_effect": "false",
+                                "x": "449",
+                                "y": "144",
+                                "width": "400",
+                                "height": "400",
+                                "image_url": "https://media.truex.com/image_assets/2018-12-19/cc7f166f-2bae-4b61-bc24-81557c6063bc.png",
+                                "hover_image_url": "https://media.truex.com/image_assets/2018-12-19/c33be184-def7-4983-8f34-e49a35f1437b.png"
+                            },
+                            {
+                                "type": "Button",
+                                "name": "hintbutton",
+                                "x": "72",
+                                "y": "750",
+                                "width": "209",
+                                "height": "90",
+                                "image_url": "https://media.truex.com/image_assets/2018-12-12/9413ff2a-c7c9-42e8-a116-d7325bcf9d1c.png",
+                                "hover_image_url": "https://media.truex.com/image_assets/2018-12-12/9413ff2a-c7c9-42e8-a116-d7325bcf9d1c.png",
+                                "guide": "bottom, top"
+                            },
+                            {
+                                "type": "Text",
+                                "name": "drawerPoints",
+                                "x": "0",
+                                "y": "590",
+                                "width": "354",
+                                "height": "80",
+                                "text": "0",
+                                "color": "0x0069B1FF",
+                                "fontName": "LargeBoldSystemFont",
+                                "alignment": "center",
+                                "vertical_alignment": "center"
+                            },
+                            {
+                                "type": "Image",
+                                "name": "bgImage",
+                                "x": "0",
+                                "y": "0",
+                                "width": "1920",
+                                "height": "1080",
+                                "image_url": "https://media.truex.com/image_assets/2018-12-13/6141de54-d286-461f-999a-94dcab32c71b.jpg"
+                            },
+                            {
+                                "type": "Audio",
+                                "name": "step_question_3_backgroundAudio",
+                                "audio_url": "https://media.truex.com/audio_assets/2018-07-25/9bf4a897-b6db-481d-8395-af4ffa0ac077.mp3",
+                                "autoplay": false,
+                                "loop": false,
+                                "global": false
+                            }
+                        ],
+                        "behaviors": {
+                            "hintbutton": {
+                                "appear": [
+                                    {
+                                        "host": "setAttribute",
+                                        "name": "drawerPoints",
+                                        "key": "text",
+                                        "value": {
+                                            "key": "score"
+                                        }
+                                    }
+                                ],
+                                "onselect": [
+                                    {
+                                        "host": "playActiveAudio"
+                                    }
+                                ]
+                            },
+                            "answerselection1": {
+                                "onselect": [
+                                    {
+                                        "host": "replaceStep",
+                                        "cardName": "step_question_3_wrong"
+                                    }
+                                ]
+                            },
+                            "answerselection2": {
+                                "onselect": [
+                                    {
+                                        "host": "replaceStep",
+                                        "cardName": "step_question_3_wrong"
                                     }
                                 ]
                             },
@@ -857,129 +952,76 @@
                                         }
                                     },
                                     {
-                                        "cardName": "step_question_3_right",
-                                        "host": "replaceStep"
-                                    }
-                                ]
-                            },
-                            "hintbutton": {
-                                "appear": [
-                                    {
-                                        "host": "setAttribute",
-                                        "key": "text",
-                                        "name": "drawerPoints",
-                                        "value": {
-                                            "key": "score"
-                                        }
-                                    }
-                                ],
-                                "onselect": [
-                                    {
-                                        "host": "playActiveAudio"
+                                        "host": "replaceStep",
+                                        "cardName": "step_question_3_right"
                                     }
                                 ]
                             }
-                        },
-                        "elements": [
-                            {
-                                "height": "400",
-                                "hover_effect": "false",
-                                "hover_image_url": "https://media.truex.com/image_assets/2018-12-19/b3999537-61ee-4338-b3c0-63d5da252b6f.png",
-                                "image_url": "https://media.truex.com/image_assets/2018-12-19/29d207e2-d9e6-479f-9f36-e8d64a394e18.png",
-                                "name": "answerselection3",
-                                "type": "Button",
-                                "width": "400",
-                                "x": "1490",
-                                "y": "144"
-                            },
-                            {
-                                "height": "400",
-                                "hover_effect": "false",
-                                "hover_image_url": "https://media.truex.com/image_assets/2018-12-19/380da852-a214-4cf3-81e9-cad2356a4d8a.png",
-                                "image_url": "https://media.truex.com/image_assets/2018-12-19/f00e990d-ae3b-46f6-a423-f98dc642131a.png",
-                                "name": "answerselection2",
-                                "type": "Button",
-                                "width": "400",
-                                "x": "970",
-                                "y": "144"
-                            },
-                            {
-                                "guide": "bottom, top",
-                                "height": "400",
-                                "hover_effect": "false",
-                                "hover_image_url": "https://media.truex.com/image_assets/2018-12-19/c33be184-def7-4983-8f34-e49a35f1437b.png",
-                                "image_url": "https://media.truex.com/image_assets/2018-12-19/cc7f166f-2bae-4b61-bc24-81557c6063bc.png",
-                                "name": "answerselection1",
-                                "type": "Button",
-                                "width": "400",
-                                "x": "449",
-                                "y": "144"
-                            },
-                            {
-                                "guide": "bottom, top",
-                                "height": "90",
-                                "hover_image_url": "https://media.truex.com/image_assets/2018-12-12/9413ff2a-c7c9-42e8-a116-d7325bcf9d1c.png",
-                                "image_url": "https://media.truex.com/image_assets/2018-12-12/9413ff2a-c7c9-42e8-a116-d7325bcf9d1c.png",
-                                "name": "hintbutton",
-                                "type": "Button",
-                                "width": "209",
-                                "x": "72",
-                                "y": "750"
-                            },
-                            {
-                                "color": "0x0069B1FF",
-                                "fontName": "LargeBoldSystemFont",
-                                "height": "80",
-                                "horizAlign": "center",
-                                "name": "drawerPoints",
-                                "text": "0",
-                                "type": "Label",
-                                "vertAlign": "center",
-                                "width": "354",
-                                "x": "0",
-                                "y": "590"
-                            },
-                            {
-                                "height": "1080",
-                                "image_url": "https://media.truex.com/image_assets/2018-12-13/6141de54-d286-461f-999a-94dcab32c71b.jpg",
-                                "name": "bgImage",
-                                "type": "Image",
-                                "width": "1920",
-                                "x": "0",
-                                "y": "0"
-                            },
-                            {
-                                "autoplay": false,
-                                "global": false,
-                                "loop": false,
-                                "name": "step_question_3_backgroundAudio",
-                                "src": "https://media.truex.com/audio_assets/2018-07-25/9bf4a897-b6db-481d-8395-af4ffa0ac077.mp3",
-                                "type": "Audio"
-                            }
-                        ],
-                        "name": "step_question_3_select"
+                        }
                     },
                     {
+                        "name": "step_question_3_right",
+                        "elements": [
+                            {
+                                "type": "Button",
+                                "name": "clear",
+                                "is_disabled": "true",
+                                "x": "0",
+                                "y": "0",
+                                "width": "1",
+                                "height": "1",
+                                "image_url": ""
+                            },
+                            {
+                                "type": "Image",
+                                "name": "hintbutton",
+                                "x": "72",
+                                "y": "750",
+                                "width": "209",
+                                "height": "90",
+                                "image_url": "https://media.truex.com/image_assets/2018-12-12/9413ff2a-c7c9-42e8-a116-d7325bcf9d1c.png",
+                                "hover_image_url": "https://media.truex.com/image_assets/2018-12-12/9413ff2a-c7c9-42e8-a116-d7325bcf9d1c.png"
+                            },
+                            {
+                                "type": "Text",
+                                "name": "drawerPoints",
+                                "x": "0",
+                                "y": "590",
+                                "width": "354",
+                                "height": "80",
+                                "text": "",
+                                "color": "0x0069B1FF",
+                                "fontName": "LargeBoldSystemFont",
+                                "alignment": "center",
+                                "vertical_alignment": "center"
+                            },
+                            {
+                                "type": "Image",
+                                "name": "bgImage",
+                                "x": "0",
+                                "y": "0",
+                                "width": "1920",
+                                "height": "1080",
+                                "image_url": "https://media.truex.com/image_assets/2018-12-12/5534777b-9724-4c61-a90a-e51a734a4e29.jpg"
+                            }
+                        ],
                         "behaviors": {
                             "clear": {
                                 "appear": [
                                     {
                                         "host": "setAttribute",
-                                        "key": "text",
                                         "name": "drawerPoints",
+                                        "key": "text",
                                         "value": {
                                             "key": "score"
                                         }
                                     },
                                     {
+                                        "host": "setTimeout",
+                                        "timeout": 5,
                                         "do": [
                                             {
-                                                "else": [
-                                                    {
-                                                        "cardName": "end_card_lose",
-                                                        "host": "replaceStep"
-                                                    }
-                                                ],
+                                                "host": "if",
                                                 "expression": {
                                                     "operation": ">=",
                                                     "values": [
@@ -989,88 +1031,88 @@
                                                         300
                                                     ]
                                                 },
-                                                "host": "if",
                                                 "then": [
                                                     {
-                                                        "cardName": "end_card_win",
-                                                        "host": "replaceStep"
+                                                        "host": "replaceStep",
+                                                        "cardName": "end_card_win"
+                                                    }
+                                                ],
+                                                "else": [
+                                                    {
+                                                        "host": "replaceStep",
+                                                        "cardName": "end_card_lose"
                                                     }
                                                 ]
                                             }
-                                        ],
-                                        "host": "setTimeout",
-                                        "timeout": 5
+                                        ]
                                     }
                                 ]
                             }
-                        },
-                        "elements": [
-                            {
-                                "height": "1",
-                                "image_url": "",
-                                "is_disabled": "true",
-                                "name": "clear",
-                                "type": "Button",
-                                "width": "1",
-                                "x": "0",
-                                "y": "0"
-                            },
-                            {
-                                "height": "90",
-                                "hover_image_url": "https://media.truex.com/image_assets/2018-12-12/9413ff2a-c7c9-42e8-a116-d7325bcf9d1c.png",
-                                "image_url": "https://media.truex.com/image_assets/2018-12-12/9413ff2a-c7c9-42e8-a116-d7325bcf9d1c.png",
-                                "name": "hintbutton",
-                                "type": "Image",
-                                "width": "209",
-                                "x": "72",
-                                "y": "750"
-                            },
-                            {
-                                "color": "0x0069B1FF",
-                                "fontName": "LargeBoldSystemFont",
-                                "height": "80",
-                                "horizAlign": "center",
-                                "name": "drawerPoints",
-                                "text": "",
-                                "type": "Label",
-                                "vertAlign": "center",
-                                "width": "354",
-                                "x": "0",
-                                "y": "590"
-                            },
-                            {
-                                "height": "1080",
-                                "image_url": "https://media.truex.com/image_assets/2018-12-12/5534777b-9724-4c61-a90a-e51a734a4e29.jpg",
-                                "name": "bgImage",
-                                "type": "Image",
-                                "width": "1920",
-                                "x": "0",
-                                "y": "0"
-                            }
-                        ],
-                        "name": "step_question_3_right"
+                        }
                     },
                     {
+                        "name": "step_question_3_wrong",
+                        "elements": [
+                            {
+                                "type": "Button",
+                                "name": "clear",
+                                "is_disabled": "true",
+                                "x": "0",
+                                "y": "0",
+                                "width": "1",
+                                "height": "1",
+                                "image_url": ""
+                            },
+                            {
+                                "type": "Image",
+                                "name": "hintbutton",
+                                "x": "72",
+                                "y": "750",
+                                "width": "209",
+                                "height": "90",
+                                "image_url": "https://media.truex.com/image_assets/2018-12-12/9413ff2a-c7c9-42e8-a116-d7325bcf9d1c.png",
+                                "hover_image_url": "https://media.truex.com/image_assets/2018-12-12/9413ff2a-c7c9-42e8-a116-d7325bcf9d1c.png"
+                            },
+                            {
+                                "type": "Text",
+                                "name": "drawerPoints",
+                                "x": "0",
+                                "y": "590",
+                                "width": "354",
+                                "height": "80",
+                                "text": "",
+                                "color": "0x0069B1FF",
+                                "fontName": "LargeBoldSystemFont",
+                                "alignment": "center",
+                                "vertical_alignment": "center"
+                            },
+                            {
+                                "type": "Image",
+                                "name": "bgImage",
+                                "x": "0",
+                                "y": "0",
+                                "width": "1920",
+                                "height": "1080",
+                                "image_url": "https://media.truex.com/image_assets/2018-12-12/06614995-d435-46fb-a796-6d49aceaf4f5.jpg"
+                            }
+                        ],
                         "behaviors": {
                             "clear": {
                                 "appear": [
                                     {
                                         "host": "setAttribute",
-                                        "key": "text",
                                         "name": "drawerPoints",
+                                        "key": "text",
                                         "value": {
                                             "key": "score"
                                         }
                                     },
                                     {
+                                        "host": "setTimeout",
+                                        "timeout": 5,
                                         "do": [
                                             {
-                                                "else": [
-                                                    {
-                                                        "cardName": "end_card_lose",
-                                                        "host": "replaceStep"
-                                                    }
-                                                ],
+                                                "host": "if",
                                                 "expression": {
                                                     "operation": ">=",
                                                     "values": [
@@ -1080,83 +1122,119 @@
                                                         300
                                                     ]
                                                 },
-                                                "host": "if",
                                                 "then": [
                                                     {
-                                                        "cardName": "end_card_win",
-                                                        "host": "replaceStep"
+                                                        "host": "replaceStep",
+                                                        "cardName": "end_card_win"
+                                                    }
+                                                ],
+                                                "else": [
+                                                    {
+                                                        "host": "replaceStep",
+                                                        "cardName": "end_card_lose"
                                                     }
                                                 ]
                                             }
-                                        ],
-                                        "host": "setTimeout",
-                                        "timeout": 5
+                                        ]
                                     }
                                 ]
                             }
-                        },
-                        "elements": [
-                            {
-                                "height": "1",
-                                "image_url": "",
-                                "is_disabled": "true",
-                                "name": "clear",
-                                "type": "Button",
-                                "width": "1",
-                                "x": "0",
-                                "y": "0"
-                            },
-                            {
-                                "height": "90",
-                                "hover_image_url": "https://media.truex.com/image_assets/2018-12-12/9413ff2a-c7c9-42e8-a116-d7325bcf9d1c.png",
-                                "image_url": "https://media.truex.com/image_assets/2018-12-12/9413ff2a-c7c9-42e8-a116-d7325bcf9d1c.png",
-                                "name": "hintbutton",
-                                "type": "Image",
-                                "width": "209",
-                                "x": "72",
-                                "y": "750"
-                            },
-                            {
-                                "color": "0x0069B1FF",
-                                "fontName": "LargeBoldSystemFont",
-                                "height": "80",
-                                "horizAlign": "center",
-                                "name": "drawerPoints",
-                                "text": "",
-                                "type": "Label",
-                                "vertAlign": "center",
-                                "width": "354",
-                                "x": "0",
-                                "y": "590"
-                            },
-                            {
-                                "height": "1080",
-                                "image_url": "https://media.truex.com/image_assets/2018-12-12/06614995-d435-46fb-a796-6d49aceaf4f5.jpg",
-                                "name": "bgImage",
-                                "type": "Image",
-                                "width": "1920",
-                                "x": "0",
-                                "y": "0"
-                            }
-                        ],
-                        "name": "step_question_3_wrong"
+                        }
                     },
                     {
+                        "name": "end_card_win",
+                        "elements": [
+                            {
+                                "type": "Button",
+                                "name": "playagainbutton",
+                                "x": "978",
+                                "y": "677",
+                                "width": "378",
+                                "height": "103",
+                                "image_url": "https://media.truex.com/image_assets/2018-12-12/b35916dd-f422-47ba-a4a3-b0a895d2454c.png",
+                                "hover_image_url": "https://media.truex.com/image_assets/2018-12-12/b35916dd-f422-47ba-a4a3-b0a895d2454c.png",
+                                "guide": "right, top"
+                            },
+                            {
+                                "type": "Image",
+                                "name": "hintbutton",
+                                "x": "72",
+                                "y": "750",
+                                "width": "209",
+                                "height": "90",
+                                "image_url": "https://media.truex.com/image_assets/2018-12-12/9413ff2a-c7c9-42e8-a116-d7325bcf9d1c.png",
+                                "hover_image_url": "https://media.truex.com/image_assets/2018-12-12/9413ff2a-c7c9-42e8-a116-d7325bcf9d1c.png"
+                            },
+                            {
+                                "type": "Text",
+                                "name": "scoreText",
+                                "x": "354",
+                                "y": "320",
+                                "width": "1566",
+                                "height": "80",
+                                "text": "",
+                                "color": "0xFFFFFFFF",
+                                "fontName": "LargeBoldSystemFont",
+                                "alignment": "center",
+                                "vertical_alignment": "center"
+                            },
+                            {
+                                "type": "Text",
+                                "name": "drawerPoints",
+                                "x": "0",
+                                "y": "590",
+                                "width": "354",
+                                "height": "80",
+                                "text": "",
+                                "color": "0x0069B1FF",
+                                "fontName": "LargeBoldSystemFont",
+                                "alignment": "center",
+                                "vertical_alignment": "center"
+                            },
+                            {
+                                "type": "Image",
+                                "name": "bgImage",
+                                "x": "0",
+                                "y": "0",
+                                "width": "1920",
+                                "height": "1080",
+                                "image_url": "https://media.truex.com/image_assets/2018-12-12/1fb19182-b5a8-4004-be5b-731cad808249.jpg"
+                            },
+                            {
+                                "type": "Audio",
+                                "name": "backgroundAudio",
+                                "audio_url": "https://media.truex.com/audio_assets/2018-07-25/f571a072-c683-49c8-a573-0e79e6dc7161.mp3",
+                                "autoplay": true,
+                                "loop": true,
+                                "global": false
+                            }
+                        ],
                         "behaviors": {
                             "playagainbutton": {
+                                "onselect": [
+                                    {
+                                        "host": "assign",
+                                        "key": "score",
+                                        "value": 0
+                                    },
+                                    {
+                                        "host": "replaceStep",
+                                        "cardName": "step_question_1"
+                                    }
+                                ],
                                 "appear": [
                                     {
                                         "host": "setAttribute",
-                                        "key": "text",
                                         "name": "drawerPoints",
+                                        "key": "text",
                                         "value": {
                                             "key": "score"
                                         }
                                     },
                                     {
                                         "host": "setAttribute",
-                                        "key": "text",
                                         "name": "scoreText",
+                                        "key": "text",
                                         "value": {
                                             "operation": "+",
                                             "values": [
@@ -1174,7 +1252,80 @@
                                             ]
                                         }
                                     }
-                                ],
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "name": "end_card_lose",
+                        "elements": [
+                            {
+                                "type": "Button",
+                                "name": "playagainbutton",
+                                "x": "978",
+                                "y": "677",
+                                "width": "378",
+                                "height": "103",
+                                "image_url": "https://media.truex.com/image_assets/2018-12-12/b35916dd-f422-47ba-a4a3-b0a895d2454c.png",
+                                "hover_image_url": "https://media.truex.com/image_assets/2018-12-12/b35916dd-f422-47ba-a4a3-b0a895d2454c.png",
+                                "guide": "right, top"
+                            },
+                            {
+                                "type": "Image",
+                                "name": "hintbutton",
+                                "x": "72",
+                                "y": "750",
+                                "width": "209",
+                                "height": "90",
+                                "image_url": "https://media.truex.com/image_assets/2018-12-12/9413ff2a-c7c9-42e8-a116-d7325bcf9d1c.png",
+                                "hover_image_url": "https://media.truex.com/image_assets/2018-12-12/9413ff2a-c7c9-42e8-a116-d7325bcf9d1c.png"
+                            },
+                            {
+                                "type": "Text",
+                                "name": "scoreText",
+                                "x": "354",
+                                "y": "320",
+                                "width": "1566",
+                                "height": "80",
+                                "text": "",
+                                "color": "0xFFFFFFFF",
+                                "fontName": "LargeBoldSystemFont",
+                                "alignment": "center",
+                                "vertical_alignment": "center"
+                            },
+                            {
+                                "type": "Text",
+                                "name": "drawerPoints",
+                                "x": "0",
+                                "y": "590",
+                                "width": "354",
+                                "height": "80",
+                                "text": "",
+                                "color": "0x0069B1FF",
+                                "fontName": "LargeBoldSystemFont",
+                                "alignment": "center",
+                                "vertical_alignment": "center"
+                            },
+                            {
+                                "type": "Image",
+                                "name": "bgImage",
+                                "x": "0",
+                                "y": "0",
+                                "width": "1920",
+                                "height": "1080",
+                                "image_url": "https://media.truex.com/image_assets/2018-12-12/f618fee3-92e7-444a-97b5-1aa79223d469.jpg"
+                            },
+                            {
+                                "type": "Audio",
+                                "name": "backgroundAudio",
+                                "audio_url": "https://media.truex.com/audio_assets/2018-07-25/f571a072-c683-49c8-a573-0e79e6dc7161.mp3",
+                                "autoplay": true,
+                                "loop": true,
+                                "global": false
+                            }
+                        ],
+                        "behaviors": {
+                            "playagainbutton": {
                                 "onselect": [
                                     {
                                         "host": "assign",
@@ -1182,96 +1333,23 @@
                                         "value": 0
                                     },
                                     {
-                                        "cardName": "step_question_1",
-                                        "host": "replaceStep"
+                                        "host": "replaceStep",
+                                        "cardName": "step_question_1"
                                     }
-                                ]
-                            }
-                        },
-                        "elements": [
-                            {
-                                "guide": "right, top",
-                                "height": "103",
-                                "hover_image_url": "https://media.truex.com/image_assets/2018-12-12/b35916dd-f422-47ba-a4a3-b0a895d2454c.png",
-                                "image_url": "https://media.truex.com/image_assets/2018-12-12/b35916dd-f422-47ba-a4a3-b0a895d2454c.png",
-                                "name": "playagainbutton",
-                                "type": "Button",
-                                "width": "378",
-                                "x": "978",
-                                "y": "677"
-                            },
-                            {
-                                "height": "90",
-                                "hover_image_url": "https://media.truex.com/image_assets/2018-12-12/9413ff2a-c7c9-42e8-a116-d7325bcf9d1c.png",
-                                "image_url": "https://media.truex.com/image_assets/2018-12-12/9413ff2a-c7c9-42e8-a116-d7325bcf9d1c.png",
-                                "name": "hintbutton",
-                                "type": "Image",
-                                "width": "209",
-                                "x": "72",
-                                "y": "750"
-                            },
-                            {
-                                "color": "0xFFFFFFFF",
-                                "fontName": "LargeBoldSystemFont",
-                                "height": "80",
-                                "horizAlign": "center",
-                                "name": "scoreText",
-                                "text": "",
-                                "type": "Label",
-                                "vertAlign": "center",
-                                "width": "1566",
-                                "x": "354",
-                                "y": "320"
-                            },
-                            {
-                                "color": "0x0069B1FF",
-                                "fontName": "LargeBoldSystemFont",
-                                "height": "80",
-                                "horizAlign": "center",
-                                "name": "drawerPoints",
-                                "text": "",
-                                "type": "Label",
-                                "vertAlign": "center",
-                                "width": "354",
-                                "x": "0",
-                                "y": "590"
-                            },
-                            {
-                                "height": "1080",
-                                "image_url": "https://media.truex.com/image_assets/2018-12-12/1fb19182-b5a8-4004-be5b-731cad808249.jpg",
-                                "name": "bgImage",
-                                "type": "Image",
-                                "width": "1920",
-                                "x": "0",
-                                "y": "0"
-                            },
-                            {
-                                "autoplay": true,
-                                "global": false,
-                                "loop": true,
-                                "name": "backgroundAudio",
-                                "src": "https://media.truex.com/audio_assets/2018-07-25/f571a072-c683-49c8-a573-0e79e6dc7161.mp3",
-                                "type": "Audio"
-                            }
-                        ],
-                        "name": "end_card_win"
-                    },
-                    {
-                        "behaviors": {
-                            "playagainbutton": {
+                                ],
                                 "appear": [
                                     {
                                         "host": "setAttribute",
-                                        "key": "text",
                                         "name": "drawerPoints",
+                                        "key": "text",
                                         "value": {
                                             "key": "score"
                                         }
                                     },
                                     {
                                         "host": "setAttribute",
-                                        "key": "text",
                                         "name": "scoreText",
+                                        "key": "text",
                                         "value": {
                                             "operation": "+",
                                             "values": [
@@ -1289,87 +1367,9 @@
                                             ]
                                         }
                                     }
-                                ],
-                                "onselect": [
-                                    {
-                                        "host": "assign",
-                                        "key": "score",
-                                        "value": 0
-                                    },
-                                    {
-                                        "cardName": "step_question_1",
-                                        "host": "replaceStep"
-                                    }
                                 ]
                             }
-                        },
-                        "elements": [
-                            {
-                                "guide": "right, top",
-                                "height": "103",
-                                "hover_image_url": "https://media.truex.com/image_assets/2018-12-12/b35916dd-f422-47ba-a4a3-b0a895d2454c.png",
-                                "image_url": "https://media.truex.com/image_assets/2018-12-12/b35916dd-f422-47ba-a4a3-b0a895d2454c.png",
-                                "name": "playagainbutton",
-                                "type": "Button",
-                                "width": "378",
-                                "x": "978",
-                                "y": "677"
-                            },
-                            {
-                                "height": "90",
-                                "hover_image_url": "https://media.truex.com/image_assets/2018-12-12/9413ff2a-c7c9-42e8-a116-d7325bcf9d1c.png",
-                                "image_url": "https://media.truex.com/image_assets/2018-12-12/9413ff2a-c7c9-42e8-a116-d7325bcf9d1c.png",
-                                "name": "hintbutton",
-                                "type": "Image",
-                                "width": "209",
-                                "x": "72",
-                                "y": "750"
-                            },
-                            {
-                                "color": "0xFFFFFFFF",
-                                "fontName": "LargeBoldSystemFont",
-                                "height": "80",
-                                "horizAlign": "center",
-                                "name": "scoreText",
-                                "text": "",
-                                "type": "Label",
-                                "vertAlign": "center",
-                                "width": "1566",
-                                "x": "354",
-                                "y": "320"
-                            },
-                            {
-                                "color": "0x0069B1FF",
-                                "fontName": "LargeBoldSystemFont",
-                                "height": "80",
-                                "horizAlign": "center",
-                                "name": "drawerPoints",
-                                "text": "",
-                                "type": "Label",
-                                "vertAlign": "center",
-                                "width": "354",
-                                "x": "0",
-                                "y": "590"
-                            },
-                            {
-                                "height": "1080",
-                                "image_url": "https://media.truex.com/image_assets/2018-12-12/f618fee3-92e7-444a-97b5-1aa79223d469.jpg",
-                                "name": "bgImage",
-                                "type": "Image",
-                                "width": "1920",
-                                "x": "0",
-                                "y": "0"
-                            },
-                            {
-                                "autoplay": true,
-                                "global": false,
-                                "loop": true,
-                                "name": "backgroundAudio",
-                                "src": "https://media.truex.com/audio_assets/2018-07-25/f571a072-c683-49c8-a573-0e79e6dc7161.mp3",
-                                "type": "Audio"
-                            }
-                        ],
-                        "name": "end_card_lose"
+                        }
                     }
                 ],
                 "studio_customization": {
