@@ -119,7 +119,8 @@ sub launchTruexAd()
 
     ? "TRUE[X] >>> ContentFlow::launchTruexAd() - starting ad at video position: ";m.videoPlayer.position
 
-    m.videoPositionAtAdBreakPause = m.videoPlayer.position
+    ' Hedge against Roku playhead imprecision by adding buffer so that non choice card content is not shown
+    m.videoPositionAtAdBreakPause = m.videoPlayer.position + 0.5
     ' Note: bumping the seek interval as the Roku player seems to have trouble seeking ahead to a specific time based on the type of stream.
     m.streamSeekDuration = decodedData.cardDuration + 3
     ' Populating the test ad from the local mock payload
