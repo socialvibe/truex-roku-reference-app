@@ -46,19 +46,7 @@
 						],
 						"behaviors": {
 							"leftButton": {
-								"onhover": [
-									{
-										"host": "playBackgroundSoundWithUrl",
-										"url": "http://soundUrl"
-									}
-								],
 								"onselect": [
-									{
-										"host": "stopSound"
-									},
-									{
-										"host": "flagActivityForAttention"
-									},
 									{
 										"host": "replaceStep",
 										"cardName": "step_2a"
@@ -67,19 +55,7 @@
 								"onvideoend": []
 							},
 							"middleButton": {
-								"onhover": [
-									{
-										"host": "playBackgroundSoundWithUrl",
-										"url": "http://soundUrl"
-									}
-								],
 								"onselect": [
-									{
-										"host": "stopSound"
-									},
-									{
-										"host": "flagActivityForAttention"
-									},
 									{
 										"host": "replaceStep",
 										"cardName": "step_2b"
@@ -88,19 +64,7 @@
 								"onvideoend": []
 							},
 							"rightButton": {
-								"onhover": [
-									{
-										"host": "playBackgroundSoundWithUrl",
-										"url": "http://soundUrl"
-									}
-								],
 								"onselect": [
-									{
-										"host": "stopSound"
-									},
-									{
-										"host": "flagActivityForAttention"
-									},
 									{
 										"host": "replaceStep",
 										"cardName": "step_2c"
@@ -417,8 +381,89 @@
             "f": "",
             "vo": "",
             "pos": "preroll",
-            "product": "sponsored_stream"
-           }
+            "product": "sponsored_stream",
+			"asset_type": "layoutJSON",
+            "asset_args": {
+                "steps": [
+                    {
+                        "name": "main_card",
+                        "elements": [
+                            {
+                                "name": "optInButton",
+                                "type": "Button",
+                                "x": "529",
+                                "y": "550",
+                                "width": "390",
+                                "height": "125",
+                                "image_url": "https://media.truex.com/image_assets/2017-09-05/8d1885e9-ef24-4f4b-bb32-ee919f127689.png",
+                                "hover_image_url": "https://media.truex.com/image_assets/2017-09-05/7c93c03a-7a33-4270-a79b-3980a61cb0e5.png",
+                                "opacity": 0
+                            },
+                            {
+                                "name": "optOutButton",
+                                "type": "Button",
+                                "x": "995",
+                                "y": "550",
+                                "width": "390",
+                                "height": "125",
+                                "image_url": "https://media.truex.com/image_assets/2017-09-05/c755d4f1-284f-414f-9eae-4f9c28150a9d.png",
+                                "hover_image_url": "https://media.truex.com/image_assets/2017-09-05/abb939df-d30c-4811-acef-972ef0949635.png",
+                                "opacity": 0
+                            }
+                        ],
+                        "behaviors": {
+                            "optInButton": {
+								"appear": [
+                                    { 
+                                        "host" : "setTimeout",
+                                        "duration" : 2.5,
+                                        "do": [         
+                                            {
+                                                "attributes": {
+                                                    "opacity": 1
+                                                },
+                                                "duration": 0.25,
+                                                "host": "animateElement",
+                                                "name": "optInButton"
+                                            },
+                                            {
+                                                "attributes": {
+                                                    "opacity": 1
+                                                },
+                                                "duration": 0.25,
+                                                "host": "animateElement",
+                                                "name": "optOutButton"
+                                            },
+                                            { 
+                                                "host" : "setTimeout",
+                                                "duration" : 0.25,
+                                                "do": [         
+                                                    { 
+                                                        "host": "resetFocus" 
+                                                    }
+                                                ] 
+                                            }
+                                        ]
+                                    }
+								],
+                                "onSelect": [
+                                    {
+                                        "host": "cardOptIn"
+                                    }
+                                ]
+                            },
+                            "optOutButton": {
+                                "onSelect": [
+                                    {
+                                        "host": "cardOptOut"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        }
     ],
     "card_creative_args": null,
     "card_creative_url": "https://media.truex.com/m/video/truexloadingplaceholder-QA-30s.mp4",
